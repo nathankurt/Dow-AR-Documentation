@@ -9,6 +9,8 @@
   * [Editing Roles](#editing-roles)
   * [Giving Access to Models Based On Role](#giving-access-to-models-based-on-role)
 * [Highlighting Different Models](#highlighting-different-models)
+* [Authorization Process](#authorization-process)
+  * [
 
 ## How To Use
 
@@ -81,4 +83,28 @@ If you want to give access to models based on their role and what team they are 
 
 ## Highlighting Different Models
 
+[Return To Top](#go-to)
+
+## Authorization Process
+
+Calls to get items from sharepoint and user info are from the [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer)
+
+###Authorization Code Interceptor
+
+The authorization flow within Unity requires a GameObject with the Authorization Code Interceptor script. In "Intercepted Hosts" elements should be any URLs you want the object to intercept. For example "https://graph.microsoft.com" as element 0 will intercept any call made to that url and capture the response. If there is no auth token it will then attempt to get one automatically. This URL should match the url in MicrosoftGraphService.cs in the project.
+The client Id and client Secret should be set based on the AzureAD application client and secret.
+The redirect (currently http://exist1.haptixgames.com:8080/exist/restxq/oauth-interceptor) is necessary for redirecting and capturing some information after the user logs in.
+Scopes can vary, but should contain information for each element like openid, email, or AllSites.Read.
+Authorization server URI should be https://login.microsoftonline.com/c3e32f53-cb7f-4809-968d-1cc4ccc785fe/oauth2/authorize
+Access Token server URI should be https://login.microsoftonline.com/c3e32f53-cb7f-4809-968d-1cc4ccc785fe/oauth2/token
+Access Token Uri parameters grant_type should have a key of "grant_type", and value of "authorization_code". Prompt should have a key of "prompt" and value of "login".
+
+###MicrosoftGraphService
+
+Additional help [here](https://www.youtube.com/watch?v=nMHjWjgo7kY).
+This script should have an http path to whatever URL you want to intercept responses from matching Authorization Code Interceptor Above.
+
+###SharePointFolderMakeGraphCall
+
+The script SharePointFolderMakeGraphCall iterates through all items in the Documents list currently. SetDataSource() has the paths it should follow, so other lists can be added and iterated through.
 [Return To Top](#go-to)
