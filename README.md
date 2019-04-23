@@ -10,7 +10,9 @@
   * [Giving Access to Models Based On Role](#giving-access-to-models-based-on-role)
 * [Highlighting Different Models](#highlighting-different-models)
 * [Authorization Process](#authorization-process)
-  * [
+  * [Authorization Code Interceptor](#authorizationcodeinterceptor)
+  * [Microsoft Graph Service](#microsoftgraphservice)
+  * [SharePointFolderMakeGraphCall](#sharepointfoldermakegraphcall)
 
 ## How To Use
 
@@ -109,4 +111,5 @@ This script should have an http path to whatever URL you want to intercept respo
 ### SharePointFolderMakeGraphCall
 
 The script SharePointFolderMakeGraphCall iterates through all items in the Documents list currently. SetDataSource() has the paths it should follow, so other lists can be added and iterated through.
+
 [Return To Top](#go-to)
