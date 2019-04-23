@@ -51,7 +51,7 @@ If you want to give access to models based on their role and what team they are 
  
    [2. Give access to models on a user-by-user basis(not really recommended)](#give-access-per-user) 
  
-   [3. Give Groups access to models on a model-per-model basis(not recommended either) ](#giving-groups-access-per---model) 
+   [3. Give Groups access to models on a model-per-model basis(not recommended either) ](#giving-groups-access-per-model) 
 
  #### Create A New List
  You can create a list pretty easily and as long as the user has access to the list, the app will find the model and load it in. Go into site contents on the sidebar and click New -> App Then Search For _ModelListTemplate_. Click add, give it a name and description and you're new list is created! 
