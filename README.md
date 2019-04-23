@@ -93,7 +93,9 @@ Calls to get items from sharepoint and user info are from the [Microsoft Graph E
 
 ### Authorization Code Interceptor
 
-The authorization flow within Unity requires a GameObject with the Authorization Code Interceptor script. In "Intercepted Hosts" elements should be any URLs you want the object to intercept. For example "https://graph.microsoft.com" as element 0 will intercept any call made to that url and capture the response. If there is no auth token it will then attempt to get one automatically. This URL should match the url in MicrosoftGraphService.cs in the project.
+The authorization flow within Unity requires a GameObject with the Authorization Code Interceptor script. 
+In "Intercepted Hosts" elements should be any URLs you want the object to intercept. For example "https://graph.microsoft.com" as element 0 will intercept any call made to that url and capture the response. 
+If there is no auth token it will then attempt to get one automatically. This URL should match the url in MicrosoftGraphService.cs in the project.
 The client Id and client Secret should be set based on the AzureAD application client and secret.
 
 The redirect (currently http://exist1.haptixgames.com:8080/exist/restxq/oauth-interceptor) is necessary for redirecting and capturing some information after the user logs in.
@@ -103,13 +105,15 @@ Authorization server URI should be https://login.microsoftonline.com/c3e32f53-cb
 Access Token server URI should be https://login.microsoftonline.com/c3e32f53-cb7f-4809-968d-1cc4ccc785fe/oauth2/token
 Access Token Uri parameters grant_type should have a key of "grant_type", and value of "authorization_code". Prompt should have a key of "prompt" and value of "login".
 
-### MicrosoftGraphService
+ ### MicrosoftGraphService
 
-Additional help [here](https://www.youtube.com/watch?v=nMHjWjgo7kY).
-This script should have an http path to whatever URL you want to intercept responses from matching Authorization Code Interceptor Above.
+ Additional help [here](https://www.youtube.com/watch?v=nMHjWjgo7kY).
+ This script should have an http path to whatever URL you want to intercept responses from matching Authorization Code Interceptor Above.
 
-### SharePointFolderMakeGraphCall
+ ### SharePointFolderMakeGraphCall
 
-The script SharePointFolderMakeGraphCall iterates through all items in the Documents list currently. SetDataSource() has the paths it should follow, so other lists can be added and iterated through.
-
+ The script SharePointFolderMakeGraphCall iterates through all items in the Documents list currently. SetDataSource() has the paths it   should follow, so other lists can be added and iterated through.
+ #### Additional authorization
+ 
+ The OAuthInterceptor, once it has a token, will always attempt to use that token. If it is expired it will try and refresh that token automatically.
 [Return To Top](#go-to)
