@@ -9,6 +9,8 @@
   * [Editing Roles](#editing-roles)
   * [Giving Access to Models Based On Role](#giving-access-to-models-based-on-role)
 * [Highlighting Different Models](#highlighting-different-models)
+* [Plane Visualization](#plane-visualization)
+* [Resetting AR Session](#resetting-ar-session)
 * [Authorization Process](#authorization-process)
   * [Authorization Code Interceptor](#authorizationcodeinterceptor)
   * [Microsoft Graph Service](#microsoftgraphservice)
@@ -85,6 +87,12 @@ If you want to give access to models based on their role and what team they are 
 
 ## Highlighting Different Models
 
+[Return To Top](#go-to)
+
+## Plane Visualization
+[Return To Top](#go-to)
+
+## Resetting AR Session
 [Return To Top](#go-to)
 
 ## Authorization Process
