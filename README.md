@@ -15,8 +15,15 @@
   * [Authorization Code Interceptor](#authorizationcodeinterceptor)
   * [Microsoft Graph Service](#microsoftgraphservice)
   * [SharePointFolderMakeGraphCall](#sharepointfoldermakegraphcall)
+* [AR Screen](#ar-screen)
+  * [iOS](#ios)
+  * [Android](#android)
 
 ## How To Use
+
+App Center is being used to distribute the latest version of the application for both Android and iOS. The application can be installed onto a users device directly from App Center by using their Dow login.
+
+Once the application is open a user can login to the application using their normal Dow employee login. After login has been completed a user returns to the application and will be shown all the models they have access to. A login will be shown for first time users to acclimate them to the application. From there a user will be able to operate the application normally. Models will be automatically updated from the database whenever a user navigates back to the model selection screen.
 
 [Return To Top](#go-to)
 
@@ -157,4 +164,16 @@ Access Token Uri parameters grant_type should have a key of "grant_type", and va
  #### Additional authorization
  
  The OAuthInterceptor, once it has a token, will always attempt to use that token. If it is expired it will try and refresh that token automatically.
+
 [Return To Top](#go-to)
+
+## AR Screen
+
+The AR Screen is the only part of the application that could not be built cross-platform within Unity. Therefore, we have created two scenes named iOS AR View and Android AR View. The iOS screen uses the native AR Kit and Android uses the native AR Core.
+
+### iOS
+
+### Android
+
+[Return To Top](#go-to)
+
