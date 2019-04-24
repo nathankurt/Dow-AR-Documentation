@@ -90,9 +90,42 @@ If you want to give access to models based on their role and what team they are 
 [Return To Top](#go-to)
 
 ## Plane Visualization
+
+### Default Behavior
+
+The default behaviour of the plane visualization feature is as follows:
+* It will always be ON when there are no models placed
+* It will automatically turn OFF after a model is placed on a plane
+* After a model is placed, the user can choose to toggle the visualization of the planes at will
+
+### How it's done
+
+The toggle within the UserInfo screen has a function called TogglePlanes() attached to it via
+a script component ("iOSARView.cs" for the iOS side and "AndroidARView.cs" for the Android side). Since all of the planes in the scene are GameObjects with a tag of "plane" attached
+to them on creation we can find all of the planes that were detected in the scene using the built in Unity function call 
+GameObject.FindGameObjectsWithTag("plane"). This will return an array of GameObjects which we then iterate over 
+and then proceed to either enable/disable the Renderer component of the plane. 
+
 [Return To Top](#go-to)
 
 ## Resetting AR Session
+
+### What it does
+
+The purpose of resetting the AR session is to start on a fresh AR view without restarting the entire scene itself. 
+When the AR session gets reset all of the planes, feature points, and any tracking data will be cleared. 
+
+### How it's done
+
+The button within the UserInfo screen has a function called ClearARSession() attached to it via
+a script component ("iOSARView.cs" for the iOS side and "AndroidARView.cs" for the Android side).
+The function itself starts a coroutine which is where the resetting of the AR session actually happens.
+We first get session object from the scene. We then proceed to retrieve the session configuration from the session object 
+and store it in another variable. This configuration data is important as it will make sure that our new session will have 
+the same properties as our old one. After we have saved the session configuration we will destroy the existing session object
+and create a new one. After a new one is made and we will then set the old session configuration variable to the new session
+variable. 
+
 [Return To Top](#go-to)
 
 ## Authorization Process
