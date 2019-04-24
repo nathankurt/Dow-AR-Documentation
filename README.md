@@ -142,11 +142,11 @@ screen.
 We took pictures of active scenes on the Dow iPads themselves to get the resolution correct and inserted them into separate 
 canvases. On these canvases we implemented the interactiveness by using invisible buttons and images with variable transparency.
 Every part of a scene that is of any importance will have a an image object above it in order to highlight that specific
-region of the screen. This image's transparency, or alpha value, is manipulated in code to range from 0 to 0.25 (Complete 
-transparency to 25 percent transparent). This transparency is to get the user's attention and to indicate that this region 
-of this screen is interactive. On top of this image is an invisible button so that the user's touch will trigger a text to 
-pop up on the screen that explains a little about the corresponding scene element. Everything is located within the Tutorial.cs
-script.
+region of the screen. This image's transparency, or alpha value, is manipulated in code to continuously oscillate within
+a range of 0 to 0.25 (complete transparency to 25 percent transparent). This transparency is to get the user's attention 
+and to indicate that this region of this screen is interactive. On top of this image is an invisible button so that the 
+user's touch will trigger a text to pop up on the screen that explains a little about the corresponding scene element. 
+Everything pertaining to the tutorial is located within the 'Tutorial.cs' script.
 
 [Return To Top](#go-to)
 
