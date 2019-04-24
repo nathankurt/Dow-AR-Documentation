@@ -128,7 +128,7 @@ Access Token Uri parameters grant_type should have a key of "grant_type", and va
 
 ## Model Selection
 
-When the model selection starts all of the models are put into the screen in a prefab called Model Selection Entry. This displays the model and the name. When one of these is sellected that model is passed to the model configuration canvas and can be configured there. Once a user clicks "view" the model is placed in DontDestroyOnLoad so that it can be found in the AR View scene.
+After retreiving all of the models from the backend and local storage, all of the models are put into their own prefab called Model Selection Entry.This displays the model and the name. When one of these is sellected that model is passed to the model configuration canvas and can be configured there. Once a user clicks "view" the model is placed in DontDestroyOnLoad so that it can be found in the AR View scene.
 
 [Return To Top](#go-to)
 
