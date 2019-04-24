@@ -8,7 +8,6 @@
   * [Adding People To Groups](#adding-people-to-groups)
   * [Editing Roles](#editing-roles)
   * [Giving Access to Models Based On Role](#giving-access-to-models-based-on-role)
-* [Highlighting Different Models](#highlighting-different-models)
 * [Plane Visualization](#plane-visualization)
 * [Resetting AR Session](#resetting-ar-session)
 * [Authorization Process](#authorization-process)
@@ -90,10 +89,6 @@ If you want to give access to models based on their role and what team they are 
  
  _PS: If you want models that everyone can access, maybe make a list named general that sharepoint members have access to and add models that way_ 
 
-
-[Return To Top](#go-to)
-
-## Highlighting Different Models
 
 [Return To Top](#go-to)
 
