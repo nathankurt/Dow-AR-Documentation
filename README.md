@@ -130,6 +130,8 @@ Access Token Uri parameters grant_type should have a key of "grant_type", and va
 
 When the model selection starts all of the models are put into the screen in a prefab called Model Selection Entry. This displays the model and the name. When one of these is sellected that model is passed to the model configuration canvas and can be configured there. Once a user clicks "view" the model is placed in DontDestroyOnLoad so that it can be found in the AR View scene.
 
+[Return To Top](#go-to)
+
 ## AR Screen
 
 The AR Screen is the only part of the application that could not be built cross-platform within Unity. Therefore, we have created two scenes named iOS AR View and Android AR View. The iOS screen uses the native AR Kit and Android uses the native AR Core.
