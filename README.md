@@ -18,6 +18,10 @@
 
 ## How To Use
 
+App Center is being used to distribute the latest version of the application for both Android and iOS. The application can be installed onto a users device directly from App Center by using their Dow login.
+
+Once the application is open a user can login to the application using their normal Dow employee login. After login has been completed a user returns to the application and will be shown all the models they have access to. A login will be shown for first time users to acclimate them to the application. From there a user will be able to operate the application normally. Models will be automatically updated from the database whenever a user navigates back to the model selection screen.
+
 [Return To Top](#go-to)
 
 ## Roles
