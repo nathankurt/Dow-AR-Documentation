@@ -12,6 +12,7 @@
   * [Authorization Code Interceptor](#authorizationcodeinterceptor)
   * [Microsoft Graph Service](#microsoftgraphservice)
   * [SharePointFolderMakeGraphCall](#sharepointfoldermakegraphcall)
+* [Tutorial](#tutorial)
 * [Model Selection](#model-selection)
 * [AR Screen](#ar-screen)
   * [iOS](#ios)
@@ -127,9 +128,31 @@ Access Token Uri parameters grant_type should have a key of "grant_type", and va
 
 [Return To Top](#go-to)
 
+## Tutorial
+
+### What it does
+The tutorial was made to imitate the actual scenes that are used throughout the app while also having an interactive aspect.
+The user is greeted with a main menu with buttons leading them to the 4 main scenes within the app.
+Only on the first use of the app will the user be taken tutorial right after logging in. Afterwards the visit is stored in 
+the PlayerPreferences as a bool and from then on the user will be taken straight to the model selection screen after logging 
+in. The user can revisit the tutorial if they later wish to by clicking the button labeled 'Tutorial' within the UserInfo
+screen. 
+
+### How it's done
+We took pictures of active scenes on the Dow iPads themselves to get the resolution correct and inserted them into separate 
+canvases. On these canvases we implemented the interactiveness by using invisible buttons and images with variable transparency.
+Every part of a scene that is of any importance will have a an image object above it in order to highlight that specific
+region of the screen. This image's transparency, or alpha value, is manipulated in code to range from 0 to 0.25 (Complete 
+transparency to 25 percent transparent). This transparency is to get the user's attention and to indicate that this region 
+of this screen is interactive. On top of this image is an invisible button so that the user's touch will trigger a text to 
+pop up on the screen that explains a little about the corresponding scene element. Everything is located within the Tutorial.cs
+script.
+
+[Return To Top](#go-to)
+
 ## Model Selection
 
-After retreiving all of the models from the backend and local storage, all of the models are put into their own prefab called Model Selection Entry.This displays the model and the name. When one of these is sellected that model is passed to the model configuration canvas and can be configured there. Once a user clicks "view" the model is placed in DontDestroyOnLoad so that it can be found in the AR View scene.
+After retrieving all of the models from the backend and local storage, all of the models are put into their own prefab called Model Selection Entry.This displays the model and the name. When one of these is sellected that model is passed to the model configuration canvas and can be configured there. Once a user clicks "view" the model is placed in DontDestroyOnLoad so that it can be found in the AR View scene.
 
 [Return To Top](#go-to)
 
