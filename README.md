@@ -173,7 +173,11 @@ The AR Screen is the only part of the application that could not be built cross-
 
 ### iOS
 
+iOS AR View contains a parent GameObject named AR Kit that contains all of the vital components for running an AR Session. These bundle was adapted from the UnityARKitScene scene in the examples of the plugin. IOS AR View is the object containing the scripts for placing object within the scene. iOS Ar View handles maintaining the AR session and changing and states of planes and button functionality. iOSPlacer handles the placing and updating of the object we have passed here.On each update it checks whether a plane has been touched and then will place the object in the correct location. Lean Touch is a prefab we can add from the plugin that will allow us to use the plugin within this scene.
+
 ### Android
+
+The Android AR View contains 3 major components that make up the AR Session. AR Core Device contains the camera and scripts to run the AR camera, Environmental Light uses lighting conditions to make AR objects look more real in current lighting, and Plane Generator contains the scripts that find and create planes. In the AndroidARView object, there are two scripts for handling passing and displaying the object. First Android Model Passer takes the model passed from Model Selection and puts it into AndroidARView. AndroidARView handles the polling for touches on planes to place models as well as updating the state of the planes and model. Button switching is also handled here for highlighting and transform. Lean Touch is again required for moving and rotating the models.
 
 [Return To Top](#go-to)
 
