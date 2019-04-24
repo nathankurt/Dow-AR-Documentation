@@ -15,6 +15,7 @@
   * [Authorization Code Interceptor](#authorizationcodeinterceptor)
   * [Microsoft Graph Service](#microsoftgraphservice)
   * [SharePointFolderMakeGraphCall](#sharepointfoldermakegraphcall)
+* [Model Selection](#model-selection)
 * [AR Screen](#ar-screen)
   * [iOS](#ios)
   * [Android](#android)
@@ -166,6 +167,10 @@ Access Token Uri parameters grant_type should have a key of "grant_type", and va
  The OAuthInterceptor, once it has a token, will always attempt to use that token. If it is expired it will try and refresh that token automatically.
 
 [Return To Top](#go-to)
+
+## Model Selection
+
+When the model selection starts all of the models are put into the screen in a prefab called Model Selection Entry. This displays the model and the name. When one of these is sellected that model is passed to the model configuration canvas and can be configured there. Once a user clicks "view" the model is placed in DontDestroyOnLoad so that it can be found in the AR View scene.
 
 ## AR Screen
 
