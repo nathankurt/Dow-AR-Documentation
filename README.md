@@ -15,6 +15,9 @@
   * [Authorization Code Interceptor](#authorizationcodeinterceptor)
   * [Microsoft Graph Service](#microsoftgraphservice)
   * [SharePointFolderMakeGraphCall](#sharepointfoldermakegraphcall)
+* [AR Screen](#ar-screen)
+  * [iOS](#ios)
+  * [Android](#android)
 
 ## How To Use
 
@@ -128,4 +131,16 @@ Access Token Uri parameters grant_type should have a key of "grant_type", and va
  #### Additional authorization
  
  The OAuthInterceptor, once it has a token, will always attempt to use that token. If it is expired it will try and refresh that token automatically.
+
 [Return To Top](#go-to)
+
+## AR Screen
+
+The AR Screen is the only part of the application that could not be built cross-platform within Unity. Therefore, we have created two scenes named iOS AR View and Android AR View. The iOS screen uses the native AR Kit and Android uses the native AR Core.
+
+### iOS
+
+### Android
+
+[Return To Top](#go-to)
+
