@@ -18,6 +18,7 @@
   * [Android](#android)
   * [Plane Visualization](#plane-visualization)
   * [Resetting AR Session](#resetting-ar-session)
+* [Creating an AssetBundle](#creating-an-assetbundle)
 
 ## How To Use
 
@@ -185,3 +186,41 @@ variable.
 
 [Return To Top](#go-to)
 
+## Creating an AssetBundle
+### Importing Scripts into Your Project
+* Import these scripts from the Model Management Platform source
+  * ModelPartHighlight.cs
+  * CreateAssetBundles.cs
+  * CreateAndroidAssetBundles.cs
+* In your Unity project, import these scripts by copying them into your assets folder. 
+* Place CreateAssetBundles and CreateAndroidAssetBundles into a folder named ‘Editor’
+
+### Creating a Prefab
+* Import the model file into your unity file structure.
+* Place your model in the scene.
+* If your model requires transform changes (scale, rotation, pivot point)
+  * Create an Empty Game Object in the hierarchy
+  * Reset the Parent’s Transform (In the inspector, click the gear icon on Transform)
+  * Child the model to the empty Game Object
+  * Adjust the child model, keeping the parent the same
+*	Drag the Model (or its new parent) into your Assets folder. This will create a Prefab.
+*	Rename your prefab to the name you wish to show in the application
+
+### Adding Model Highlighting
+*	Identify which pieces of the model require highlighting. All parent and child parts of the model may be highlighted, if they meet these requirements:
+  *	The piece must have a mesh renderer
+  *	The piece must not have a collider
+*	Add ModelPartHighlight.cs onto the model piece in the prefab
+*	Fill out the public variables on ModelPartHighlight.cs
+
+### Creating the AssetBundle
+*	Select the Model Prefab or its parent
+*	If the preview window in the inspector is hidden, drag the grey bar up until the AssetBundle option is available
+*	Click on the dropdown to the right of the word AssetBundle in the preview
+  *	If a name does not already exist, select new and create it,
+  *	Select your name of choice
+*	Once you have created all AssetBundles, navigate to Assets -> Build Asset Bundles (iOS) or Assets -> Build Android Asset Bundles (Android)
+*	This process will create a folder, either called AssetBundles (iOS) or AndroidAssetBundles (Android). These are your model AssetBundles!
+
+### Uploading the AssetBundles
+Simply Upload your model to the SharePoint list for the desired role!
